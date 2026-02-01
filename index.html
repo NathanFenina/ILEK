@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offre Netlinking Premium - Decupler</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0A0E27;
+            --secondary: #1E40AF;
+            --accent: #3B82F6;
+            --success: #10B981;
+            --bg: #F8FAFC;
+            --card-bg: #FFFFFF;
+            --border: #E2E8F0;
+            --text: #1E293B;
+            --text-light: #64748B;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Archivo', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: left;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -40px;
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
+            opacity: 0.1;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            animation: morph 8s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        @keyframes morph {
+            0%, 100% {
+                border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            }
+            50% {
+                border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
+            }
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            color: var(--text-light);
+            margin-bottom: 12px;
+        }
+
+        .client-name {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .intro {
+            background: var(--card-bg);
+            border: 2px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .intro::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.05));
+            pointer-events: none;
+        }
+
+        .intro p {
+            font-size: 17px;
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        .intro strong {
+            color: var(--secondary);
+        }
+
+        .pricing-box {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(10, 14, 39, 0.3);
+        }
+
+        .pricing-box::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, var(--accent), var(--secondary), var(--primary));
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .pricing-label {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.9;
+            margin-bottom: 8px;
+        }
+
+        .pricing-amount {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+
+        .pricing-period {
+            font-size: 18px;
+            opacity: 0.85;
+            margin-bottom: 24px;
+        }
+
+        .pricing-breakdown {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .breakdown-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .breakdown-label {
+            font-size: 13px;
+            opacity: 0.8;
+            margin-bottom: 4px;
+        }
+
+        .breakdown-value {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .section {
+            margin-bottom: 48px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 24px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 28px;
+            background: linear-gradient(180deg, var(--accent), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: linear-gradient(180deg, var(--accent), var(--secondary));
+            transition: height 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(59, 130, 246, 0.15);
+        }
+
+        .feature-card:hover::before {
+            height: 100%;
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        .feature-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .feature-description {
+            font-size: 15px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .timeline {
+            background: var(--card-bg);
+            border: 2px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 19px;
+            top: 40px;
+            bottom: -24px;
+            width: 2px;
+            background: var(--border);
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
+        }
+
+        .timeline-number {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .timeline-content h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .timeline-content p {
+            font-size: 15px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .differentiators {
+            background: linear-gradient(135deg, #F0F9FF 0%, #EFF6FF 100%);
+            border: 2px solid #BFDBFE;
+            border-radius: 16px;
+            padding: 32px;
+        }
+
+        .diff-list {
+            list-style: none;
+        }
+
+        .diff-item {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            transition: transform 0.2s;
+        }
+
+        .diff-item:hover {
+            transform: translateX(8px);
+        }
+
+        .diff-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .diff-icon {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, var(--success), #059669);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .diff-text {
+            font-size: 16px;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .diff-text strong {
+            color: var(--secondary);
+        }
+
+        .cta {
+            background: var(--card-bg);
+            border: 3px solid var(--accent);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin-top: 48px;
+        }
+
+        .cta h2 {
+            font-size: 32px;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .cta p {
+            font-size: 18px;
+            color: var(--text-light);
+            margin-bottom: 24px;
+        }
+
+        .contact-info {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 16px;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .footer {
+            margin-top: 60px;
+            padding-top: 32px;
+            border-top: 2px solid var(--border);
+            text-align: center;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            .pricing-amount {
+                font-size: 42px;
+            }
+
+            .pricing-breakdown {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">Proposition Commerciale</div>
+            <h1>Netlinking Premium<br>+ Reverse Engineering LLM</h1>
+            <p class="subtitle">Stratégie de notoriété avancée pour maximiser votre visibilité</p>
+            <p class="client-name">Pour : Thomas Genin -- ilek.fr </p>
+        </header>
+
+        <div class="intro">
+            <p>Suite à notre échange, voici une proposition adaptée à vos besoins de <strong>netlinking qualitatif</strong> avec une approche différenciante combinant achat de liens premium et stratégies organiques innovantes via le <strong>reverse engineering sur les LLM</strong>.</p>
+        </div>
+
+        <div class="pricing-box">
+            <div class="pricing-label">Investissement Global</div>
+            <div class="pricing-amount">9 000€</div>
+            <div class="pricing-period">sur 6 mois</div>
+            
+            <div class="pricing-breakdown">
+                <div class="breakdown-item">
+                    <div class="breakdown-label">Achat de liens</div>
+                    <div class="breakdown-value">6 000€</div>
+                </div>
+                <div class="breakdown-item">
+                    <div class="breakdown-label">Prestation (6j × 500€)</div>
+                    <div class="breakdown-value">3 000€</div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">Ce qui est inclus</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <div class="feature-title">15-20 Liens Premium</div>
+                    <div class="feature-description">Sélection de domaines à haute autorité (DA/TF élevés) avec validation systématique avant achat. Budget moyen : 300-400€/lien.</div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <div class="feature-title">Reverse Engineering LLM</div>
+                    <div class="feature-description">Analyse des requêtes et sources utilisées par ChatGPT, Gemini, Claude pour identifier les sites à forte notoriété IA et opportunités de citation.</div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <div class="feature-title">Audit Concurrentiel</div>
+                    <div class="feature-description">Analyse approfondie des backlinks concurrents via SEMrush/Ahrefs pour reproduire leurs meilleures stratégies.</div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-title">📝 Rédaction Incluse</div>
+                    <div class="feature-description">Création de contenu optimisé via SEO AI Systems (pas de ChatGPT générique). Économie du budget rédaction facturé en plus ailleurs.</div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📍</div>
+                    <div class="feature-title">Espaces Pro & Annuaires</div>
+                    <div class="feature-description">Inscription sur plateformes professionnelles ciblées pour renforcer les signaux de notoriété et crédibilité de la marque.</div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">✍️</div>
+                    <div class="feature-title">Guest Blogging Ciblé</div>
+                    <div class="feature-description">Campagnes de publication d'articles invités sur des sites éditoriaux de votre secteur pour diversifier le profil de liens.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Déroulement sur 6 mois</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-number">1</div>
+                    <div class="timeline-content">
+                        <h3>Analyse & Stratégie</h3>
+                        <p>Audit concurrentiel (SEMrush/Ahrefs) + Reverse engineering LLM pour identifier les opportunités premium et organiques.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-number">2</div>
+                    <div class="timeline-content">
+                        <h3>Prospection & Validation</h3>
+                        <p>Identification des domaines cibles, négociation des prix, validation avec vous avant tout achat. Lancement des inscriptions espaces pro.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-number">3</div>
+                    <div class="timeline-content">
+                        <h3>Achat & Rédaction</h3>
+                        <p>Achat des liens validés (3-4 liens/mois), rédaction des contenus optimisés via SEO AI Systems, mise en place des ancres stratégiques.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-number">4</div>
+                    <div class="timeline-content">
+                        <h3>Guest Blog & Campagnes</h3>
+                        <p>Prise de contact avec sites éditoriaux pour publications organiques, gestion des campagnes d'outreach ciblées.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-number">5</div>
+                    <div class="timeline-content">
+                        <h3>Indexation Progressive</h3>
+                        <p>Mise en ligne échelonnée des liens pour un profil naturel, suivi de l'indexation Google, ajustements si nécessaire.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-number">6</div>
+                    <div class="timeline-content">
+                        <h3>Reporting & Recommandations</h3>
+                        <p>Tableau de pilotage complet avec KPIs, analyse d'impact sur les positions, recommandations pour la suite.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Nos différenciateurs vs concurrence</h2>
+            <div class="differentiators">
+                <ul class="diff-list">
+                    <li class="diff-item">
+                        <div class="diff-icon">✓</div>
+                        <div class="diff-text"><strong>Approche mixte :</strong> Pas uniquement de l'achat de liens, mais combinaison intelligente achat premium + stratégies organiques (guest blog, espaces pro).</div>
+                    </li>
+                    <li class="diff-item">
+                        <div class="diff-icon">✓</div>
+                        <div class="diff-text"><strong>Reverse engineering LLM :</strong> Méthodologie exclusive pour identifier les sources citées par ChatGPT/Gemini/Claude et optimiser votre positionnement sur les requêtes IA.</div>
+                    </li>
+                    <li class="diff-item">
+                        <div class="diff-icon">✓</div>
+                        <div class="diff-text"><strong>Rédaction incluse :</strong> Contenu créé via SEO AI Systems (pas de ChatGPT basique), économise le budget rédaction facturé séparément par d'autres agences.</div>
+                    </li>
+                    <li class="diff-item">
+                        <div class="diff-icon">✓</div>
+                        <div class="diff-text"><strong>TJM compétitif :</strong> 500€/jour vs 900€ chez certains concurrents, avec 6 jours de production réelle sur 6 mois (1j/mois).</div>
+                    </li>
+                    <li class="diff-item">
+                        <div class="diff-icon">✓</div>
+                        <div class="diff-text"><strong>Validation systématique :</strong> Aucun achat sans votre validation préalable, transparence totale sur les domaines et tarifs négociés.</div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="cta">
+            <h2>Prêt à booster votre notoriété ?</h2>
+            <p>Démarrage possible dès validation de votre budget en janvier.</p>
+            <p class="contact-info">Nathan Fenina • Decupler<br>nathan@decupler.com</p>
+        </div>
+
+        <footer class="footer">
+            <p>Offre valable jusqu'au 15 février 2026 • Decupler © 2026</p>
+        </footer>
+    </div>
+</body>
+</html>
